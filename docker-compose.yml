@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile.train
+    volumes:
+      - ./output:/app/output
+
+  host:
+    build:
+      context: .
+      dockerfile: Dockerfile.host
+    ports:
+      - "8080:5000"
+    depends_on:
+      - trainer
+    volumes:
+      - ./output:/app/output
