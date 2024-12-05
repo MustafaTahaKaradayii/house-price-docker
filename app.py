@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the trained model
-model = pickle.load(open("output/house_price_model.pkl", "rb"))
+model = pickle.load(open("/app/output/house_price_model.pkl", "rb"))
 
 app = Flask(__name__)
 
